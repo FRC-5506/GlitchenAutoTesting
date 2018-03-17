@@ -52,8 +52,8 @@ public class TeleopGo extends Command {
     @Override
     protected void execute() {
     	
-    	forward = Robot.oi.joystick.getX()*0.6;
-    	turning = Robot.oi.joystick.getY()*-0.6;
+    	turning = Robot.oi.joystick.getX()*0.6;
+    	forward = Robot.oi.joystick.getY()*-0.6;
     	
     	Robot.chassis.drive(forward, turning);
     	
