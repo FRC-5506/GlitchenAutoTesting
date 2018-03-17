@@ -133,24 +133,25 @@ public class Chassis extends Subsystem {
     }
     
     public void driveLinear() {
-    	/*difference = rightEncoder.getDistance()-leftEncoder.getDistance();//difference of distances
+    	/*difference = encoderRightDistance-encoderLeftDistance;//difference of distances
     																//wheels travelled
+    	correction = 0;//set the turning values to 0 at first
+    	lCorrect = 0;
+    	rCorrect = 0;
     	
-    	if(Math.abs(difference)>1)//if one side has gone farther than another
+    	if(Math.abs(difference)>5)//if one side has gone farther than another
     		correction = difference;//turn the robot the amount that it's off
-    	else
-    		correction = 0;
     	
-    	if(correction>0)
-    		lCorrect = correction;
-    	else if(correction<0)
-    		rCorrect = correction;
-    	else
-    		correction = 0;*/
+    	if(correction<0) {//if right side has gone farther
+    		lCorrect = correction;//make left side do the correction
+    	} else if(correction>0) {//if left side has gone farther
+    		rCorrect = correction;//make right side do the correction
+    	}
     	
-    	drive(0.4, 0);
-    	//tankDrive((0.5/*+lCorrect*/), (-0.5/*+Math.abs(rCorrect)*/));//play with this number -- imprecise
+    	tankDrive((0.76+(lCorrect/80)), (0.8+(Math.abs(rCorrect)/80)));//play with this number -- imprecise*/
     	//if it gets off by more than half an inch, turn at 5%
+    	
+    	drive(0.6, 0);
     }
     
 }
