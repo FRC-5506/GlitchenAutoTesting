@@ -45,9 +45,7 @@ public class TeleopGo extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	leftRotations = 0;
-    	rightRotations = 0;
-    	Robot.chassis.resetEncoders();
+    	//Robot.chassis.resetEncoders();//TODO: try removing this for encoders
     }
 
     // Called repeatedly when this Command is scheduled to run

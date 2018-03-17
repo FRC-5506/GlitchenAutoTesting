@@ -56,10 +56,11 @@ public class LinearDrive extends Command {
     protected boolean isFinished() {
     	//double aveDist = (Robot.chassis.getLeftRotations()+Robot.chassis.getRightRotations())/2;
     	
-		if(driveDistance<=Robot.chassis.getRightRotations().getDistance())
+    	return Robot.chassis.getRightRotations().getDistance() * -1 > driveDistance;
+		/*if(driveDistance<=Robot.chassis.getRightRotations().getDistance())
     		return true;
     	else
-    		return false;
+    		return false;*/
     }
 
     // Called once after isFinished returns true

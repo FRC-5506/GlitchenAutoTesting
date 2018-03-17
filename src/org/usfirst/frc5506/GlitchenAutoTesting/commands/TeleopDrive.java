@@ -43,7 +43,7 @@ public class TeleopDrive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	Robot.chassis.resetEncoders();
+    	//Robot.chassis.resetEncoders();//TODO: Try this second deleting for encoder
     }
 
     // Called repeatedly when this Command is scheduled to run
@@ -62,11 +62,10 @@ public class TeleopDrive extends Command {
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-    	if(!isTimedOut()) {
+    	if(!isTimedOut())
     		return isDone;
-    	} else {
+    	else
     		return isTimedOut();
-}
     }
 
     // Called once after isFinished returns true
