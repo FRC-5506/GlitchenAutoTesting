@@ -12,7 +12,6 @@
 package org.usfirst.frc5506.GlitchenAutoTesting.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5506.GlitchenAutoTesting.Robot;
-import org.usfirst.frc5506.GlitchenAutoTesting.RobotMap;
 
 /**
  *
@@ -43,21 +42,27 @@ public class LinearDrive extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	Robot.chassis.resetEncoders();
+    	Robot.wheels.resetEncoders();
+    	//Robot.moving = true;
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
     	Robot.chassis.driveLinear();
+    	//setTimeout(driveDistance);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-    	aveDist = (Robot.chassis.encoderLeftDistance+Robot.chassis.encoderRightDistance)/2;
+    	aveDist = (Robot.wheels.leftDist()+Robot.wheels.rightDist())/2;
     	
     	return (aveDist >= driveDistance);
+    	/*if(isTimedOut())
+    		Robot.moving = false;
+    	
+    	return isTimedOut();*/
     }
 
     // Called once after isFinished returns true

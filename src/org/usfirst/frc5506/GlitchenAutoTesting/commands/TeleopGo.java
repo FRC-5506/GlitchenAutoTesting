@@ -45,23 +45,19 @@ public class TeleopGo extends Command {
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-    	//Robot.chassis.resetEncoders();//TODO: try removing this for encoders
+    	//Robot.chassis.resetEncoders();// tryd removing this for encoders
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	
     	turning = Robot.oi.joystick.getX()*0.6;
     	forward = Robot.oi.joystick.getY()*-0.6;
     	
     	Robot.chassis.drive(forward, turning);
     	
-    	//leftRotations += Robot.chassis.getLeftRotations();
-    	//rightRotations += Robot.chassis.getRightRotations();
-    	
-    	//SmartDashboard.putNumber("Left Encoder", Robot.chassis.getLeftRotations());
-    	//SmartDashboard.putNumber("Right Encoder", Robot.chassis.getRightRotations());
+    	SmartDashboard.putNumber("Left Encoder", Robot.wheels.leftDist());
+    	SmartDashboard.putNumber("Right Encoder", Robot.wheels.rightDist());
     }
 
     // Make this return true when this Command no longer needs to run execute()
