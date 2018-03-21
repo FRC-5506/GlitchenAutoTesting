@@ -13,9 +13,7 @@ package org.usfirst.frc5506.GlitchenAutoTesting;
 
 import org.usfirst.frc5506.GlitchenAutoTesting.commands.*;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.Joystick;
-import org.usfirst.frc5506.GlitchenAutoTesting.subsystems.*;
 
 
 /**
